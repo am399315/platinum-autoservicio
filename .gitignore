@@ -1,0 +1,14 @@
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Dependencias (por si se agregan en el futuro)
+node_modules/
+
+# Variables de entorno
+.env
+.env.local

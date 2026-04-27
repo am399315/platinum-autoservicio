@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO ──────────────────────────────────────────────── -->
+  <title>Platinum Autoservicios | Taller Mecánico — Barrio Ensanche Sinaí, RD</title>
+  <meta name="description" content="Taller mecánico profesional en Barrio Ensanche Sinaí. Afinaciones, suspensión, frenos, diésel, transmisiones. ¡Diagnóstico GRATIS! Tel: 849-341-7621" />
+  <meta name="keywords" content="taller mecánico, afinaciones, suspensión, frenos, diagnóstico, diésel, transmisiones, República Dominicana, Ensanche Sinaí" />
+  <meta name="author" content="Platinum Autoservicios" />
+  <link rel="canonical" href="https://www.platinumautoservicios.com/" />
+
+  <!-- ── Open Graph ────────────────────────────────────────── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.platinumautoservicios.com/" />
+  <meta property="og:title"       content="Platinum Autoservicios | Taller Mecánico Profesional" />
+  <meta property="og:description" content="Servicio automotriz y mecánica general en RD. Diagnóstico GRATIS. Tel: 849-341-7621" />
+  <meta property="og:image"       content="assets/img/letrero.png" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- ── PWA ───────────────────────────────────────────────── -->
+  <meta name="mobile-web-app-capable"              content="yes" />
+  <meta name="apple-mobile-web-app-capable"        content="yes" />
+  <meta name="apple-mobile-web-app-title"          content="Platinum Auto" />
+  <meta name="theme-color"                         content="#1a6fd4" />
+
+  <!-- ── Schema.org LocalBusiness ─────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Platinum Autoservicios",
+    "description": "Servicio Automotriz y Mecánica General",
+    "url": "https://www.platinumautoservicios.com",
+    "telephone": "+1-849-341-7621",
+    "email": "ventas@platinumautoservicios.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Entrada de Cabañas Las Palmas, Barrio Ensanche Sinaí",
+      "addressCountry": "DO"
+    },
+    "openingHours": "Mo-Sa 08:00-19:00",
+    "priceRange": "$$"
+  }
+  </script>
+
+  <!-- ── Favicon ──────────────────────────────────────────────── -->
+  <link rel="icon"             type="image/svg+xml"  href="assets/img/favicon.svg" />
+  <link rel="icon"             type="image/png"      href="assets/img/logo.png" />
+  <link rel="apple-touch-icon"                       href="assets/img/logo.png" />
+
+  <!-- ── Fuentes ────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- ── Íconos ─────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- ── Librerías externas ─────────────────────────────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <!-- ── Estilos propios ────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       STICKY BANNER
+  ══════════════════════════════════════════════════════ -->
+  <div class="sticky-banner" id="sticky-banner" role="complementary">
+    <div class="sticky-banner__content">
+      <span class="sticky-banner__pulse" aria-hidden="true"></span>
+      <p>
+        🎉 <strong>Diagnóstico Computarizado GRATIS</strong> — Lun a Sáb 8AM–7PM &nbsp;
+        <a href="https://wa.me/18493417621?text=Quiero%20el%20diagn%C3%B3stico%20gratis"
+           target="_blank" rel="noopener noreferrer">
+          Solicitar ahora <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </p>
+    </div>
+    <button class="sticky-banner__close" id="sticky-banner-close" aria-label="Cerrar banner">
+      <i class="fas fa-times" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <!-- Barra de progreso de scroll -->
+  <div id="scroll-progress" role="progressbar" aria-label="Progreso de lectura"></div>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER / NAVBAR
+  ══════════════════════════════════════════════════════ -->
+  <header class="header" id="header" role="banner">
+    <nav class="nav container" aria-label="Navegación principal">
+
+      <!-- Logo -->
+      <a href="#inicio" class="nav__logo" aria-label="Platinum Autoservicios — Inicio">
+        <img src="assets/img/logo.png"
+             alt="Platinum Autoservicios Logo"
+             class="nav__logo-img"
+             onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex'" />
+        <div class="nav__logo-text" id="logo-fallback" style="display:none">
+          <span class="logo__name">PLATINUM</span>
+          <span class="logo__sub">AUTOSERVICIOS</span>
+        </div>
+      </a>
+
+      <!-- Badge Abierto / Cerrado -->
+      <span class="status-badge" id="status-badge" aria-live="polite" aria-atomic="true">
+        <span class="status-badge__dot" aria-hidden="true"></span>
+        <span id="status-text"></span>
+      </span>
+
+      <!-- Menú desktop -->
+      <ul class="nav__menu" id="nav-menu" role="list">
+        <li><a href="#inicio"    class="nav__link">Inicio</a></li>
+        <li><a href="#nosotros"  class="nav__link">Nosotros</a></li>
+        <li><a href="#servicios" class="nav__link">Servicios</a></li>
+        <li><a href="#marcas"    class="nav__link">Marcas</a></li>
+        <li><a href="#galeria"   class="nav__link">Galería</a></li>
+        <li><a href="#cita"      class="nav__link">Cita</a></li>
+        <li><a href="#ubicacion" class="nav__link">Ubicación</a></li>
+        <li><a href="#contacto"  class="nav__link">Contacto</a></li>
+        <li>
+          <a href="https://wa.me/18493417621?text=Hola%2C%20quiero%20agendar%20una%20cita"
+             class="btn btn--sm btn--wa"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Agendar por WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> Agendar
+          </a>
+        </li>
+      </ul>
+
+      <!-- Controles derecha -->
+      <div class="nav__controls">
+        <!-- Multi-idioma -->
+        <div class="lang-switcher" role="group" aria-label="Cambiar idioma">
+          <button class="lang-btn active" data-lang="es" aria-pressed="true"  aria-label="Español">ES</button>
+          <span aria-hidden="true">|</span>
+          <button class="lang-btn"        data-lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+        <!-- Tema -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema claro/oscuro">
+          <i class="fas fa-sun"  id="icon-sun"  aria-hidden="true"></i>
+          <i class="fas fa-moon" id="icon-moon" aria-hidden="true"></i>
+        </button>
+        <!-- Hamburguesa -->
+        <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span class="hline"></span>
+          <span class="hline"></span>
+          <span class="hline"></span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Overlay menú móvil -->
+  <div class="nav__overlay" id="nav-overlay" aria-hidden="true"></div>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════════════════ -->
+    <section class="hero" id="inicio" aria-label="Sección principal">
+      <div class="hero__bg-grid"      aria-hidden="true"></div>
+      <div class="hero__particles"    id="particles"  aria-hidden="true"></div>
+      <div class="hero__speedlines"   id="speedlines" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <div class="hero__badge reveal">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          Diagnóstico <strong>GRATIS</strong>
+          <i class="fas fa-star" aria-hidden="true"></i>
+        </div>
+
+        <h1 class="hero__title reveal">
+          <span class="hero__title-top"  data-t="hero-top">PLATINUM</span>
+          <span class="hero__title-main">AUTO<em>SERVI</em>CIOS</span>
+        </h1>
+
+        <p class="hero__subtitle reveal" id="hero-sub" data-t="hero-sub">
+          Servicio Automotriz &amp; Mecánica General
+        </p>
+
+        <p class="hero__desc reveal" data-t="hero-desc">
+          Más de 6 años brindando soluciones mecánicas de calidad en Barrio Ensanche Sinaí.<br>
+          Tu vehículo merece el mejor cuidado.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a href="#cita"                                          class="btn btn--pri btn--lg"><i class="fas fa-calendar-check" aria-hidden="true"></i> <span data-t="btn-cita">Agendar Cita</span></a>
+          <a href="https://wa.me/18493417621?text=Hola"           class="btn btn--wa  btn--lg" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+          <a href="tel:+18493417621"                               class="btn btn--outline btn--lg"><i class="fas fa-phone" aria-hidden="true"></i> <span data-t="btn-call">Llamar</span></a>
+        </div>
+
+        <div class="hero__info reveal">
+          <div class="hero__info-item"><i class="fas fa-clock"          aria-hidden="true"></i><span>Lun–Sáb 8AM–7PM</span></div>
+          <div class="hero__info-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Ensanche Sinaí, RD</span></div>
+          <div class="hero__info-item"><i class="fas fa-phone"          aria-hidden="true"></i><span>849-341-7621</span></div>
+        </div>
+      </div>
+
+      <!-- Imagen hero -->
+      <div class="hero__visual" aria-hidden="true">
+        <img src="assets/img/letrero.png" alt="Platinum Autoservicios" class="hero__img" loading="eager" />
+        <div class="hero__image-glow"></div>
+      </div>
+
+      <a href="#nosotros" class="hero__scroll" aria-label="Ir a la siguiente sección">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ── STATS BAR ───────────────────────────────────────── -->
+    <section class="stats-bar" aria-label="Estadísticas del taller">
+      <div class="container">
+        <div class="stats-bar__grid">
+          <div class="stat-item reveal"><span class="stat-num" data-target="6">0</span><span class="stat-plus">+</span><span class="stat-label">Años de Experiencia</span></div>
+          <div class="stat-div" aria-hidden="true"></div>
+          <div class="stat-item reveal"><span class="stat-num" data-target="500">0</span><span class="stat-plus">+</span><span class="stat-label">Clientes Satisfechos</span></div>
+          <div class="stat-div" aria-hidden="true"></div>
+          <div class="stat-item reveal"><span class="stat-num" data-target="8">0</span><span class="stat-label">Servicios Especializados</span></div>
+          <div class="stat-div" aria-hidden="true"></div>
+          <div class="stat-item reveal"><span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span><span class="stat-label">Diagnóstico Gratis</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SOBRE NOSOTROS
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="nosotros" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__images reveal">
+            <div class="about__img-main">
+              <img src="assets/img/vehiculos.png" alt="Área de servicio con vehículos en mantenimiento" loading="lazy" />
+            </div>
+            <div class="about__img-sec">
+              <img src="assets/img/toldo.png" alt="Taller Platinum en funcionamiento" loading="lazy" />
+            </div>
+            <div class="about__badge-years" aria-label="6 años de experiencia">
+              <span class="about__badge-num">6</span>
+              <span class="about__badge-text">Años<br>de Exp.</span>
+            </div>
+          </div>
+
+          <div class="about__content reveal">
+            <span class="section__tag" data-t="about-tag">Sobre Nosotros</span>
+            <h2 class="section__title" id="about-title" data-t="about-title">
+              Tu taller de confianza<br>en Ensanche Sinaí
+            </h2>
+            <p class="about__text">
+              <strong>Platinum Autoservicios</strong> nació con una misión clara: ofrecer servicio mecánico
+              profesional, honesto y accesible. Contamos con mecánicos certificados y equipos de diagnóstico
+              de última tecnología.
+            </p>
+            <p class="about__text">
+              Ubicados en la Entrada de Cabañas Las Palmas, nos hemos ganado la confianza de cientos de
+              clientes por nuestra transparencia, precios justos y trabajo garantizado.
+            </p>
+            <ul class="about__features" role="list">
+              <li class="about__feature" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Mecánicos certificados y especializados</span></li>
+              <li class="about__feature" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Diagnóstico por computadora sin costo</span></li>
+              <li class="about__feature" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Equipos de última generación</span></li>
+              <li class="about__feature" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Presupuesto sin compromiso</span></li>
+              <li class="about__feature" role="listitem"><i class="fas fa-check-circle" aria-hidden="true"></i><span>Trabajo garantizado por escrito</span></li>
+            </ul>
+            <div class="about__actions">
+              <a href="tel:+18493417621" class="btn btn--pri"><i class="fas fa-phone" aria-hidden="true"></i> Llamar Ahora</a>
+              <a href="#servicios"       class="btn btn--ghost">Ver Servicios <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         SERVICIOS
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="servicios" aria-labelledby="svc-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag" data-t="svc-tag">Lo Que Hacemos</span>
+          <h2 class="section__title" id="svc-title" data-t="svc-title">Nuestros Servicios</h2>
+          <p class="section__desc">Soluciones mecánicas integrales para mantener tu vehículo en óptimas condiciones.</p>
+        </div>
+        <div class="services__grid" role="list">
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-cog"></i></div>
+            <h3 class="svc-card__title">Afinaciones</h3>
+            <p class="svc-card__desc">Bujías, filtros, cables de alta, revisión completa del motor para máximo rendimiento.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-car-crash"></i></div>
+            <h3 class="svc-card__title">Suspensión y Frenos</h3>
+            <p class="svc-card__desc">Revisión y reemplazo de amortiguadores, pastillas, discos y sistemas de frenado.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-gas-pump"></i></div>
+            <h3 class="svc-card__title">Diésel Ligero</h3>
+            <p class="svc-card__desc">Especialistas en motores diésel: inyectores, bombas de combustible y mantenimiento.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-gears"></i></div>
+            <h3 class="svc-card__title">Transmisiones Automáticas</h3>
+            <p class="svc-card__desc">Diagnóstico, reparación y mantenimiento de cajas automáticas y sistemas CVT.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+            <h3 class="svc-card__title">Mantenimiento Preventivo</h3>
+            <p class="svc-card__desc">Cambios de aceite, filtros, revisión de fluidos y programa de mantenimiento personalizado.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+            <h3 class="svc-card__title">Diagnóstico Computarizado</h3>
+            <p class="svc-card__desc">Lectura de códigos OBD-II, diagnóstico electrónico completo. <strong>¡Sin costo!</strong></p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-bolt"></i></div>
+            <h3 class="svc-card__title">Electricidad Automotriz</h3>
+            <p class="svc-card__desc">Reparación de sistemas eléctricos, alternadores, arranques y sensores electrónicos.</p>
+          </article>
+          <article class="svc-card reveal" role="listitem" tabindex="0">
+            <div class="svc-card__icon" aria-hidden="true"><i class="fas fa-wrench"></i></div>
+            <h3 class="svc-card__title">Y Mucho Más…</h3>
+            <p class="svc-card__desc">Cuéntanos el problema. Si tiene solución mecánica, nosotros lo resolvemos con garantía.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROMO ───────────────────────────────────────────── -->
+    <section class="promo" id="promo">
+      <div class="promo__bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="promo__content reveal">
+          <div class="promo__icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+          <div>
+            <span class="promo__tag">Oferta Especial</span>
+            <h2 class="promo__title">Diagnóstico<br><em>GRATIS</em></h2>
+            <p class="promo__desc">Diagnóstico computarizado completo sin costo. ¡Sin compromiso de reparación!</p>
+          </div>
+          <div class="promo__actions">
+            <a href="https://wa.me/18493417621?text=Quiero%20el%20diagn%C3%B3stico%20gratis" class="btn btn--wa  btn--lg" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Ahora</a>
+            <a href="tel:+18493417621"                                                        class="btn btn--outline btn--lg"><i class="fas fa-phone" aria-hidden="true"></i> 849-341-7621</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         PROCESO DE TRABAJO
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="proceso" aria-labelledby="proc-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Cómo Trabajamos</span>
+          <h2 class="section__title" id="proc-title">Tu vehículo en buenas manos</h2>
+          <p class="section__desc">Un proceso transparente y eficiente de principio a fin.</p>
+        </div>
+        <div class="proc__steps">
+          <div class="proc__step reveal">
+            <div class="proc__step-num" aria-hidden="true">01</div>
+            <div class="proc__step-icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+            <h3 class="proc__step-title">Diagnóstico</h3>
+            <p class="proc__step-desc">Conectamos tu vehículo a nuestro equipo computarizado para identificar el problema con precisión total.</p>
+          </div>
+          <div class="proc__step reveal">
+            <div class="proc__step-num" aria-hidden="true">02</div>
+            <div class="proc__step-icon" aria-hidden="true"><i class="fas fa-file-invoice-dollar"></i></div>
+            <h3 class="proc__step-title">Presupuesto</h3>
+            <p class="proc__step-desc">Te presentamos un presupuesto claro y detallado. Sin sorpresas ni cobros escondidos. Tú decides.</p>
+          </div>
+          <div class="proc__step reveal">
+            <div class="proc__step-num" aria-hidden="true">03</div>
+            <div class="proc__step-icon" aria-hidden="true"><i class="fas fa-wrench"></i></div>
+            <h3 class="proc__step-title">Reparación</h3>
+            <p class="proc__step-desc">Nuestros mecánicos especializados realizan el trabajo con repuestos de calidad y técnicas certificadas.</p>
+          </div>
+          <div class="proc__step reveal">
+            <div class="proc__step-num" aria-hidden="true">04</div>
+            <div class="proc__step-icon" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+            <h3 class="proc__step-title">Entrega</h3>
+            <p class="proc__step-desc">Revisamos todo contigo antes de entregar. Prueba de manejo incluida. Tu satisfacción es prioridad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         MARCAS
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="marcas" aria-labelledby="brands-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Compatibilidad</span>
+          <h2 class="section__title" id="brands-title">Marcas que Atendemos</h2>
+          <p class="section__desc">Experiencia con todas las marcas del mercado dominicano.</p>
+        </div>
+        <div class="brands__grid reveal" role="list" aria-label="Marcas de vehículos">
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">TOYOTA</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">HONDA</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">NISSAN</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">HYUNDAI</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">KIA</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">MAZDA</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">MITSUBISHI</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">FORD</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">CHEVROLET</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">SUZUKI</div></div>
+          <div class="brand-item" role="listitem"><div class="brand-item__inner">ISUZU</div></div>
+          <div class="brand-item brand-item--more" role="listitem"><div class="brand-item__inner"><span>+</span><small>Y más</small></div></div>
+        </div>
+        <div class="vehicle-types reveal" role="list" aria-label="Tipos de vehículos">
+          <div class="vtype" role="listitem"><i class="fas fa-car"         aria-hidden="true"></i><span>Sedanes</span></div>
+          <div class="vtype" role="listitem"><i class="fas fa-truck-pickup" aria-hidden="true"></i><span>Camionetas</span></div>
+          <div class="vtype" role="listitem"><i class="fas fa-van-shuttle"  aria-hidden="true"></i><span>Minivans</span></div>
+          <div class="vtype" role="listitem"><i class="fas fa-car-side"     aria-hidden="true"></i><span>SUVs / 4x4</span></div>
+          <div class="vtype" role="listitem"><i class="fas fa-truck"        aria-hidden="true"></i><span>Diésel Ligero</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         GALERÍA
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="galeria" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Nuestro Trabajo</span>
+          <h2 class="section__title" id="gallery-title">Galería del Taller</h2>
+          <p class="section__desc">Conoce nuestras instalaciones y el trabajo que realizamos día a día.</p>
+        </div>
+        <div class="gallery__grid" role="list">
+          <figure class="gallery__item gallery__item--wide reveal" role="listitem">
+            <img src="assets/img/letrero.png"       alt="Vista frontal del taller Platinum Autoservicios" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Nuestras Instalaciones</figcaption>
+            <button class="gallery__expand" data-img="assets/img/letrero.png"       data-cap="Nuestras Instalaciones"          aria-label="Ampliar: Nuestras Instalaciones"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item reveal" role="listitem">
+            <img src="assets/img/vehiculos.png"     alt="Área de servicio con vehículos" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Área de Servicio</figcaption>
+            <button class="gallery__expand" data-img="assets/img/vehiculos.png"     data-cap="Área de Servicio"                aria-label="Ampliar: Área de Servicio"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item reveal" role="listitem">
+            <img src="assets/img/mas_vehiculos.png" alt="Múltiples vehículos en servicio" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Múltiples Vehículos</figcaption>
+            <button class="gallery__expand" data-img="assets/img/mas_vehiculos.png" data-cap="Múltiples Vehículos en Servicio"  aria-label="Ampliar: Múltiples Vehículos"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item reveal" role="listitem">
+            <img src="assets/img/toldo.png"         alt="Taller en funcionamiento" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Taller en Funcionamiento</figcaption>
+            <button class="gallery__expand" data-img="assets/img/toldo.png"         data-cap="Taller en Pleno Funcionamiento"   aria-label="Ampliar: Taller en Funcionamiento"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item reveal" role="listitem">
+            <img src="assets/img/gomas.png"         alt="Área de suspensión y gomas" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Área de Suspensión</figcaption>
+            <button class="gallery__expand" data-img="assets/img/gomas.png"         data-cap="Área de Suspensión y Gomas"       aria-label="Ampliar: Área de Suspensión"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item reveal" role="listitem">
+            <img src="assets/img/entrada.png"       alt="Entrada del taller" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Entrada del Taller</figcaption>
+            <button class="gallery__expand" data-img="assets/img/entrada.png"       data-cap="Entrada Principal del Taller"     aria-label="Ampliar: Entrada del Taller"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+          <figure class="gallery__item gallery__item--wide reveal" role="listitem">
+            <img src="assets/img/ubicanos.png"      alt="Señales hacia el taller" class="gallery__img" loading="lazy" />
+            <figcaption class="gallery__cap">Cómo Llegarnos</figcaption>
+            <button class="gallery__expand" data-img="assets/img/ubicanos.png"      data-cap="Señales para Llegar al Taller"    aria-label="Ampliar: Cómo Llegarnos"><i class="fas fa-expand" aria-hidden="true"></i></button>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+      <button class="lb-btn" id="lb-close" aria-label="Cerrar"><i class="fas fa-times"        aria-hidden="true"></i></button>
+      <button class="lb-btn" id="lb-prev"  aria-label="Anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+      <div class="lightbox__content">
+        <img src="" alt="" id="lb-img" class="lightbox__img" />
+        <p class="lb-cap" id="lb-cap"></p>
+      </div>
+      <button class="lb-btn" id="lb-next" aria-label="Siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+         TESTIMONIOS
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="testimonios" aria-labelledby="test-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Opiniones</span>
+          <h2 class="section__title" id="test-title">Lo Que Dicen Nuestros Clientes</h2>
+        </div>
+        <div class="testimonials__grid" role="list">
+          <blockquote class="tcard reveal" role="listitem">
+            <div class="tcard__stars" aria-label="5 estrellas"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
+            <p class="tcard__text">"Excelente servicio. Me hicieron el diagnóstico gratis y el precio fue muy justo. Mi carro quedó perfecto. Los recomiendo al 100%."</p>
+            <footer class="tcard__author"><div class="tcard__avatar" aria-hidden="true">JR</div><div><cite class="tcard__name">Juan Rodríguez</cite><span class="tcard__role">Cliente frecuente</span></div></footer>
+          </blockquote>
+          <blockquote class="tcard reveal" role="listitem">
+            <div class="tcard__stars" aria-label="5 estrellas"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
+            <p class="tcard__text">"Llevé mi camioneta por problemas de suspensión. En pocas horas la resolvieron con garantía. Personal muy profesional."</p>
+            <footer class="tcard__author"><div class="tcard__avatar" aria-hidden="true">MP</div><div><cite class="tcard__name">María Pérez</cite><span class="tcard__role">Clienta satisfecha</span></div></footer>
+          </blockquote>
+          <blockquote class="tcard reveal" role="listitem">
+            <div class="tcard__stars" aria-label="5 estrellas"><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i></div>
+            <p class="tcard__text">"Mi carro diésel tenía un problema que nadie pudo resolver. En Platinum lo solucionaron al primer intento. Los mejores mecánicos de la zona."</p>
+            <footer class="tcard__author"><div class="tcard__avatar" aria-hidden="true">CG</div><div><cite class="tcard__name">Carlos García</cite><span class="tcard__role">Cliente fiel</span></div></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         RESEÑAS GOOGLE
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="resenas" aria-labelledby="rev-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Google Reviews</span>
+          <h2 class="section__title" id="rev-title">Opiniones en Google</h2>
+        </div>
+        <div class="reviews__summary reveal">
+          <div class="rev-score">
+            <span class="rev-score__num">4.9</span>
+            <div class="rev-score__stars" aria-label="4.9 de 5 estrellas">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+              <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+            </div>
+            <span class="rev-score__label">Calificación Google</span>
+          </div>
+          <div class="rev-bars">
+            <div class="rev-bar"><span>5 ⭐</span><div class="rev-bar__track"><div class="rev-bar__fill" style="--w:88%"></div></div><span>88%</span></div>
+            <div class="rev-bar"><span>4 ⭐</span><div class="rev-bar__track"><div class="rev-bar__fill" style="--w:9%"></div></div><span>9%</span></div>
+            <div class="rev-bar"><span>3 ⭐</span><div class="rev-bar__track"><div class="rev-bar__fill" style="--w:3%"></div></div><span>3%</span></div>
+            <div class="rev-bar"><span>2 ⭐</span><div class="rev-bar__track"><div class="rev-bar__fill" style="--w:0%"></div></div><span>0%</span></div>
+            <div class="rev-bar"><span>1 ⭐</span><div class="rev-bar__track"><div class="rev-bar__fill" style="--w:0%"></div></div><span>0%</span></div>
+          </div>
+          <a href="https://maps.app.goo.gl/YkqXcDup3azFQyjC8" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-google" aria-hidden="true"></i> Ver en Google Maps
+          </a>
+        </div>
+        <!--
+          REEMPLAZA ESTE DIV con el embed de Elfsight:
+          1. Ve a elfsight.com/google-reviews-widget
+          2. Crea cuenta gratuita y conecta tu Google Business
+          3. Pega el <script> que te dan aquí abajo
+        -->
+        <div class="reviews__placeholder reveal">
+          <div class="reviews__placeholder-icon" aria-hidden="true"><i class="fab fa-google"></i></div>
+          <h3>Widget de Reseñas de Google</h3>
+          <p>Regístrate gratis en <a href="https://elfsight.com/google-reviews-widget/" target="_blank" rel="noopener noreferrer"><strong>elfsight.com</strong></a> y pega el código embed aquí para mostrar las reseñas reales.</p>
+          <a href="https://www.google.com/maps/search/Platinum+Autoservicios" class="btn btn--pri" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-google" aria-hidden="true"></i> Ver Reseñas en Google
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         UBICACIÓN
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="ubicacion" aria-labelledby="loc-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Dónde Estamos</span>
+          <h2 class="section__title" id="loc-title">Encuéntranos</h2>
+          <p class="section__desc">
+            <i class="fas fa-map-marker-alt" style="color:var(--pri)" aria-hidden="true"></i>
+            Entrada Cabañas Las Palmas, Barrio Ensanche Sinaí
+          </p>
+        </div>
+        <div class="location__grid">
+          <div class="location__map reveal">
+            <iframe
+              src="https://www.google.com/maps?q=18.4347572,-69.0073395&output=embed"
+              title="Mapa de Platinum Autoservicios"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <a href="https://maps.app.goo.gl/YkqXcDup3azFQyjC8"
+               class="btn btn--pri location__map-btn"
+               target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-map" aria-hidden="true"></i> Abrir en Google Maps
+            </a>
+          </div>
+          <div class="reveal">
+            <div class="loc-detail"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><div><strong>Dirección</strong><span>Entrada Cabañas Las Palmas, Barrio Ensanche Sinaí</span></div></div>
+            <div class="loc-detail"><i class="fas fa-clock"          aria-hidden="true"></i><div><strong>Horario</strong><span>Lunes a Sábado: 8:00 AM – 7:00 PM</span></div></div>
+            <div class="loc-detail"><i class="fas fa-phone"          aria-hidden="true"></i><div><strong>Teléfono / WhatsApp</strong><a href="tel:+18493417621">849-341-7621</a></div></div>
+            <div class="loc-detail"><i class="fas fa-envelope"       aria-hidden="true"></i><div><strong>Correo</strong><a href="mailto:ventas@platinumautoservicios.com">ventas@platinumautoservicios.com</a></div></div>
+            <!-- QR -->
+            <div class="qr-box">
+              <p class="qr-box__label">Escanea para contactarnos</p>
+              <div id="qr-container" role="img" aria-label="Código QR"></div>
+              <p class="qr-box__sub">Selecciona la red</p>
+              <div class="qr-tabs" role="group" aria-label="Red social del QR">
+                <button class="qr-tab active" data-url="https://wa.me/18493417621"                       aria-pressed="true"  aria-label="QR WhatsApp"><i class="fab fa-whatsapp"   aria-hidden="true"></i></button>
+                <button class="qr-tab"        data-url="https://www.instagram.com/platinumautoservicios" aria-pressed="false" aria-label="QR Instagram"><i class="fab fa-instagram"  aria-hidden="true"></i></button>
+                <button class="qr-tab"        data-url="https://www.facebook.com/platinumautoservicios"  aria-pressed="false" aria-label="QR Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         AGENDAR CITA
+    ══════════════════════════════════════════════════════ -->
+    <section class="section section--alt" id="cita" aria-labelledby="appt-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Reservaciones</span>
+          <h2 class="section__title" id="appt-title">Agenda tu Cita</h2>
+          <p class="section__desc">Reserva con anticipación. Te confirmamos por WhatsApp en menos de 1 hora.</p>
+        </div>
+        <div class="appt__grid">
+          <!-- Formulario -->
+          <div class="appt__form-wrap reveal">
+            <!-- Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
+            <form id="appt-form" class="appt__form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate aria-label="Formulario de cita">
+              <div class="appt__row">
+                <div class="form__group"><label class="form__label" for="an">Nombre</label><input class="form__input" type="text" id="an" name="nombre" placeholder="Tu nombre completo" required autocomplete="name" aria-required="true" /></div>
+                <div class="form__group"><label class="form__label" for="ap">Teléfono</label><input class="form__input" type="tel" id="ap" name="telefono" placeholder="849-000-0000" required autocomplete="tel" aria-required="true" /></div>
+              </div>
+              <div class="appt__row">
+                <div class="form__group"><label class="form__label" for="ad">Fecha preferida</label><input class="form__input" type="date" id="ad" name="fecha" required aria-required="true" /></div>
+                <div class="form__group">
+                  <label class="form__label" for="at">Hora preferida</label>
+                  <select class="form__input" id="at" name="hora" aria-label="Hora preferida">
+                    <option value="">Seleccionar…</option>
+                    <option>8:00 AM</option><option>9:00 AM</option><option>10:00 AM</option>
+                    <option>11:00 AM</option><option>12:00 PM</option><option>1:00 PM</option>
+                    <option>2:00 PM</option><option>3:00 PM</option><option>4:00 PM</option>
+                    <option>5:00 PM</option><option>6:00 PM</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="as">Servicio requerido</label>
+                <select class="form__input" id="as" name="servicio" aria-label="Servicio requerido">
+                  <option value="">Seleccionar servicio…</option>
+                  <option>🔍 Diagnóstico Computarizado (GRATIS)</option>
+                  <option>⚙️ Afinación</option>
+                  <option>🛑 Suspensión y Frenos</option>
+                  <option>⛽ Diésel Ligero</option>
+                  <option>🔧 Transmisión Automática</option>
+                  <option>🛡️ Mantenimiento Preventivo</option>
+                  <option>⚡ Electricidad Automotriz</option>
+                  <option>🔩 Otro</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="av">Vehículo (Marca / Modelo / Año)</label>
+                <input class="form__input" type="text" id="av" name="vehiculo" placeholder="Ej: Toyota Corolla 2019" />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="am">Descripción del problema</label>
+                <textarea class="form__input form__textarea" id="am" name="notas" rows="3" placeholder="Describe brevemente qué falla…"></textarea>
+              </div>
+              <button type="submit" class="btn btn--pri btn--lg btn--full" id="appt-submit" aria-label="Confirmar cita">
+                <span class="btn__txt"><i class="fas fa-calendar-check" aria-hidden="true"></i> Confirmar Cita</span>
+                <span class="btn__load" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando…</span>
+              </button>
+              <button type="button" id="appt-wa-btn" class="btn btn--full btn--lg appt__wa-btn" aria-label="Agendar por WhatsApp">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp
+              </button>
+              <div class="form__success" id="appt-ok" hidden role="status" aria-live="polite">
+                <i class="fas fa-check-circle" aria-hidden="true"></i> ¡Cita enviada! Te confirmamos pronto.
+              </div>
+            </form>
+          </div>
+          <!-- Info lateral -->
+          <div class="appt__info reveal">
+            <div class="appt-info-card">
+              <div class="appt-info-card__icon" aria-hidden="true"><i class="fas fa-clock"></i></div>
+              <h3>Horario de Citas</h3>
+              <div class="appt-schedule">
+                <div class="appt-sched-row"><span>Lunes – Viernes</span><strong>8:00 AM – 6:00 PM</strong></div>
+                <div class="appt-sched-row"><span>Sábado</span><strong>8:00 AM – 5:00 PM</strong></div>
+                <div class="appt-sched-row closed"><span>Domingo</span><strong>Cerrado</strong></div>
+              </div>
+            </div>
+            <div class="appt-info-card appt-info-card--hi">
+              <div class="appt-info-card__icon" aria-hidden="true"><i class="fas fa-info-circle"></i></div>
+              <h3>¿Cómo funciona?</h3>
+              <ol class="appt-steps" role="list">
+                <li role="listitem"><span>1</span> Completa el formulario</li>
+                <li role="listitem"><span>2</span> Te confirmamos por WhatsApp</li>
+                <li role="listitem"><span>3</span> Llevas tu vehículo a la hora acordada</li>
+                <li role="listitem"><span>4</span> Diagnóstico y presupuesto gratis</li>
+              </ol>
+            </div>
+            <a href="https://wa.me/18493417621?text=Quiero%20agendar%20una%20cita" class="appt-wa-direct" target="_blank" rel="noopener noreferrer" aria-label="Agendar por WhatsApp directamente">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <div><strong>Cita instantánea por WhatsApp</strong><span>Respuesta en menos de 1 hora</span></div>
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         CONTACTO
+    ══════════════════════════════════════════════════════ -->
+    <section class="section" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__tag">Contáctanos</span>
+          <h2 class="section__title" id="contact-title">¿Necesitas un Servicio?</h2>
+          <p class="section__desc">Envíanos un mensaje y te respondemos en menos de 1 hora.</p>
+        </div>
+        <div class="contact__grid">
+          <!-- Formulario -->
+          <div class="reveal">
+            <!-- Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
+            <form class="contact__form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate aria-label="Formulario de contacto">
+              <div class="form__row">
+                <div class="form__group"><label class="form__label" for="cn">Nombre <span aria-hidden="true">*</span></label><input class="form__input" type="text" id="cn" name="name"  placeholder="Tu nombre" required aria-required="true" /><span class="form__error" id="cn-err" role="alert"></span></div>
+                <div class="form__group"><label class="form__label" for="cp">Teléfono <span aria-hidden="true">*</span></label><input class="form__input" type="tel"  id="cp" name="phone" placeholder="849-000-0000" required aria-required="true" /><span class="form__error" id="cp-err" role="alert"></span></div>
+              </div>
+              <div class="form__group form__group--full">
+                <label class="form__label" for="cs">Servicio de interés</label>
+                <select class="form__input" id="cs" name="service" aria-label="Servicio de interés">
+                  <option value="">Selecciona un servicio…</option>
+                  <option>Afinación</option><option>Suspensión y frenos</option><option>Diésel ligero</option>
+                  <option>Transmisión automática</option><option>Mantenimiento preventivo</option>
+                  <option>Diagnóstico computarizado (GRATIS)</option><option>Otro</option>
+                </select>
+              </div>
+              <div class="form__group form__group--full">
+                <label class="form__label" for="cm">Mensaje <span aria-hidden="true">*</span></label>
+                <textarea class="form__input form__textarea" id="cm" name="message" rows="4" placeholder="Describe el problema de tu vehículo…" required aria-required="true"></textarea>
+                <span class="form__error" id="cm-err" role="alert"></span>
+              </div>
+              <div class="form__group form__group--full">
+                <button type="submit" class="btn btn--pri btn--lg btn--full" id="cf-submit" aria-label="Enviar mensaje">
+                  <span class="btn__txt"><i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje</span>
+                  <span class="btn__load" hidden><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando…</span>
+                </button>
+              </div>
+              <div class="form__success" id="cf-ok" hidden role="status" aria-live="polite">
+                <i class="fas fa-check-circle" aria-hidden="true"></i> ¡Mensaje enviado! Te contactaremos pronto.
+              </div>
+            </form>
+          </div>
+          <!-- Contacto rápido -->
+          <div class="reveal">
+            <h3 class="contact__quick-title">Contacto Rápido</h3>
+            <a href="https://wa.me/18493417621?text=Hola" class="quick-btn quick-btn--wa" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i><div><strong>WhatsApp</strong><span>849-341-7621</span></div><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="tel:+18493417621"                    class="quick-btn quick-btn--ph"                                          aria-label="Llamar"><i class="fas fa-phone"    aria-hidden="true"></i><div><strong>Llamar Ahora</strong><span>849-341-7621</span></div><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="mailto:ventas@platinumautoservicios.com" class="quick-btn quick-btn--em"                                      aria-label="Enviar correo"><i class="fas fa-envelope" aria-hidden="true"></i><div><strong>Correo Electrónico</strong><span>ventas@platinumautoservicios.com</span></div><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            <div class="contact__social">
+              <p>Síguenos en:</p>
+              <div class="social-links" role="list">
+                <a href="https://www.facebook.com/platinumautoservicios" class="social-link social-link--fb" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/platinumautoservicios" class="social-link social-link--ig" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://wa.me/18493417621" class="social-link social-link--wa" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+              </div>
+            </div>
+            <div class="contact__hours">
+              <h4><i class="fas fa-clock" aria-hidden="true"></i> Horario de Atención</h4>
+              <table aria-label="Horario">
+                <tr><td>Lunes – Viernes</td><td><strong>8:00 AM – 7:00 PM</strong></td></tr>
+                <tr><td>Sábado</td><td><strong>8:00 AM – 7:00 PM</strong></td></tr>
+                <tr><td>Domingo</td><td><strong>Cerrado</strong></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a href="#inicio" class="nav__logo footer__logo" aria-label="Platinum Autoservicios">
+            <img src="assets/img/logo.png" alt="Logo Platinum" style="height:2.5rem" onerror="this.style.display='none'" />
+          </a>
+          <p>Servicio Automotriz y Mecánica General</p>
+          <p class="footer__addr"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Entrada Cabañas Las Palmas, Barrio Ensanche Sinaí, RD</p>
+        </div>
+        <nav class="footer__nav" aria-label="Footer nav">
+          <h3 class="footer__heading">Navegación</h3>
+          <ul role="list">
+            <li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li><li><a href="#galeria">Galería</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li><li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="footer__svcs">
+          <h3 class="footer__heading">Servicios</h3>
+          <ul role="list">
+            <li>Afinaciones</li><li>Suspensión y Frenos</li><li>Diésel Ligero</li>
+            <li>Transmisiones</li><li>Mantenimiento</li><li>Diagnóstico</li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h3 class="footer__heading">Contacto</h3>
+          <a href="tel:+18493417621"><i class="fas fa-phone" aria-hidden="true"></i> 849-341-7621</a>
+          <a href="https://wa.me/18493417621" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+          <a href="mailto:ventas@platinumautoservicios.com"><i class="fas fa-envelope" aria-hidden="true"></i> ventas@platinumautoservicios.com</a>
+          <div class="footer__social" role="list" aria-label="Redes sociales">
+            <a href="https://www.facebook.com/platinumautoservicios"  target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/platinumautoservicios" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Instagram"><i class="fab fa-instagram"  aria-hidden="true"></i></a>
+            <a href="https://wa.me/18493417621"                       target="_blank" rel="noopener noreferrer" role="listitem" aria-label="WhatsApp"><i class="fab fa-whatsapp"   aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p>&copy; <span id="year"></span> Platinum Autoservicios. Todos los derechos reservados.</p>
+        <div class="footer__bottom-right">
+          <p class="footer__credit">Diseñado con <i class="fas fa-heart" aria-hidden="true"></i> en República Dominicana</p>
+          <!-- Botón oculto para acceder al panel de facturación -->
+          <button class="footer__panel-btn" id="open-billing" aria-label="Abrir panel de facturación">
+            <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> Panel
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════
+       BOTONES FLOTANTES
+  ══════════════════════════════════════════════════════ -->
+  <!-- Mini-chat WhatsApp expandible -->
+  <div class="wa-chat" id="wa-chat">
+    <div class="wa-chat__panel" id="wa-chat-panel" aria-hidden="true" role="dialog" aria-label="Chat WhatsApp">
+      <div class="wa-chat__header">
+        <div class="wa-chat__avatar" aria-hidden="true"><i class="fab fa-whatsapp"></i></div>
+        <div class="wa-chat__info">
+          <span class="wa-chat__name">Platinum Autoservicios</span>
+          <span class="wa-chat__sub" id="wa-chat-status">● Responde en minutos</span>
+        </div>
+        <button class="wa-chat__close" id="wa-chat-close" aria-label="Cerrar chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="wa-chat__body">
+        <div class="wa-chat__bubble">
+          <p>👋 ¡Hola! ¿En qué podemos ayudarte hoy?</p>
+          <span class="wa-chat__time">Platinum Auto</span>
+        </div>
+      </div>
+      <div class="wa-chat__options">
+        <button class="wa-chat__opt" data-msg="Hola, quiero agendar una cita"><i class="fas fa-calendar-check" aria-hidden="true"></i> Agendar una cita</button>
+        <button class="wa-chat__opt" data-msg="Quiero el diagnóstico gratis"><i class="fas fa-laptop-code" aria-hidden="true"></i> Diagnóstico gratis</button>
+        <button class="wa-chat__opt" data-msg="Necesito un presupuesto"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> Pedir presupuesto</button>
+        <button class="wa-chat__opt" data-msg="Hola, tengo una consulta"><i class="fas fa-question-circle" aria-hidden="true"></i> Otra consulta</button>
+      </div>
+    </div>
+    <button class="wa-chat__trigger" id="wa-chat-trigger" aria-label="Abrir chat de WhatsApp" aria-expanded="false">
+      <i class="fab fa-whatsapp wa-chat__icon-open" aria-hidden="true"></i>
+      <i class="fas fa-times  wa-chat__icon-close"  aria-hidden="true"></i>
+      <span class="wa-chat__notify" id="wa-chat-notify" aria-hidden="true">1</span>
+    </button>
+  </div>
+  <button class="back-top" id="back-top" hidden aria-label="Volver al inicio">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ══════════════════════════════════════════════════════
+       POP-UP OFERTA
+  ══════════════════════════════════════════════════════ -->
+  <div class="promo-popup" id="promo-popup" role="dialog" aria-modal="true" aria-labelledby="popup-title" hidden>
+    <div class="promo-popup__backdrop" id="popup-backdrop"></div>
+    <div class="promo-popup__card">
+      <button class="promo-popup__close" id="popup-close" aria-label="Cerrar oferta"><i class="fas fa-times" aria-hidden="true"></i></button>
+      <div class="popup-icon" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+      <span class="popup-tag">🔥 Oferta Especial</span>
+      <h2 class="popup-title" id="popup-title">¡Diagnóstico<br><em>GRATIS</em>!</h2>
+      <p class="popup-desc">Trae tu vehículo hoy y realizamos el diagnóstico computarizado sin ningún costo.</p>
+      <div class="countdown-row" role="timer" aria-live="off">
+        <div class="cd-block"><span id="cd-h">--</span><span>Horas</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="cd-block"><span id="cd-m">--</span><span>Mins</span></div>
+        <span class="cd-sep" aria-hidden="true">:</span>
+        <div class="cd-block"><span id="cd-s">--</span><span>Segs</span></div>
+      </div>
+      <a href="https://wa.me/18493417621?text=Vengo%20por%20el%20diagn%C3%B3stico%20gratis" class="btn btn--wa btn--lg btn--full" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> ¡Quiero el Diagnóstico!
+      </a>
+      <button class="popup-dismiss" id="popup-dismiss">No, gracias</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       PWA BANNER
+  ══════════════════════════════════════════════════════ -->
+  <div class="pwa-banner" id="pwa-banner" role="dialog" aria-label="Instalar app">
+    <div class="pwa-banner__icon" aria-hidden="true"><i class="fas fa-mobile-alt"></i></div>
+    <div class="pwa-banner__text">
+      <strong>Instalar en tu móvil</strong>
+      <span>Acceso rápido desde tu pantalla de inicio</span>
+    </div>
+    <div class="pwa-banner__btns">
+      <button class="pwa-install-btn" id="pwa-install" aria-label="Instalar aplicación">Instalar</button>
+      <button class="pwa-dismiss-btn" id="pwa-dismiss" aria-label="Descartar">✕</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MODAL FACTURACIÓN
+  ══════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="billing-modal" role="dialog" aria-modal="true" aria-labelledby="billing-title" hidden>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="billing-title"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i> Sistema de Facturación</h2>
+        <button class="modal-close" id="billing-close" aria-label="Cerrar panel"><i class="fas fa-times" aria-hidden="true"></i></button>
+      </div>
+
+      <!-- LOGIN PIN -->
+      <div class="modal-body" id="billing-login">
+        <div class="pin-form">
+          <div class="pin-icon" aria-hidden="true"><i class="fas fa-lock"></i></div>
+          <h3>Acceso al Panel</h3>
+          <p>Ingresa la clave de acceso para continuar.</p>
+          <input class="pin-input" type="password" id="pin-input" placeholder="••••" maxlength="8" autocomplete="off" aria-label="Clave de acceso" />
+          <button class="btn btn--pri btn--lg" id="pin-submit"><i class="fas fa-unlock" aria-hidden="true"></i> Ingresar</button>
+          <p class="pin-error" id="pin-error" role="alert"></p>
+          <p class="pin-hint">Clave por defecto: <code>1234</code> — Cámbiala en <code>js/main.js</code></p>
+        </div>
+      </div>
+
+      <!-- PANEL PRINCIPAL -->
+      <div class="modal-body" id="billing-panel" hidden>
+        <!-- Tabs -->
+        <div class="billing-tabs" role="tablist">
+          <button class="billing-tab active" data-tab="nueva" role="tab" aria-selected="true"><i class="fas fa-plus-circle" aria-hidden="true"></i> Nueva Factura</button>
+          <button class="billing-tab"        data-tab="lista" role="tab" aria-selected="false"><i class="fas fa-list"        aria-hidden="true"></i> Facturas</button>
+          <button class="billing-tab"        data-tab="stats" role="tab" aria-selected="false"><i class="fas fa-chart-bar"   aria-hidden="true"></i> Estadísticas</button>
+        </div>
+
+        <!-- ── TAB NUEVA FACTURA ───────────────────────────── -->
+        <div class="billing-panel active" id="tab-nueva" role="tabpanel">
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-info-circle" aria-hidden="true"></i> Información de la Factura</div>
+            <div class="inv-grid-3">
+              <div class="form__group"><label class="form__label" for="inv-num">N° de Factura</label><input class="form__input" type="text" id="inv-num" readonly style="opacity:.7;cursor:not-allowed" /></div>
+              <div class="form__group"><label class="form__label" for="inv-date">Fecha</label><input class="form__input" type="date" id="inv-date" /></div>
+              <div class="form__group">
+                <label class="form__label" for="inv-status">Estado</label>
+                <select class="form__input" id="inv-status">
+                  <option value="pending">Pendiente</option>
+                  <option value="paid">Pagado</option>
+                  <option value="cancelled">Cancelado</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-user" aria-hidden="true"></i> Datos del Cliente</div>
+            <div class="inv-grid-2">
+              <div class="form__group"><label class="form__label" for="inv-client">Nombre del Cliente</label><input class="form__input" type="text" id="inv-client" placeholder="Sr. / Sra. Nombre Apellido" /></div>
+              <div class="form__group"><label class="form__label" for="inv-phone">Teléfono</label><input class="form__input" type="tel" id="inv-phone" placeholder="849-000-0000" /></div>
+            </div>
+            <div class="inv-grid-2" style="margin-top:1rem">
+              <div class="form__group"><label class="form__label" for="inv-vehicle">Vehículo (Marca / Modelo)</label><input class="form__input" type="text" id="inv-vehicle" placeholder="Ej: Toyota Corolla" /></div>
+              <div class="form__group"><label class="form__label" for="inv-year">Año</label><input class="form__input" type="text" id="inv-year" placeholder="2020" /></div>
+            </div>
+          </div>
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-tools" aria-hidden="true"></i> Detalle del Servicio</div>
+            <div class="items-table-wrap">
+              <table class="items-table" aria-label="Ítems del servicio">
+                <thead>
+                  <tr>
+                    <th class="td-num">N°</th>
+                    <th class="td-desc">Descripción del Servicio</th>
+                    <th class="td-cant">Cant.</th>
+                    <th class="td-price">P. Unit. (RD$)</th>
+                    <th class="td-total">Total (RD$)</th>
+                    <th class="td-del"></th>
+                  </tr>
+                </thead>
+                <tbody id="inv-items-body"></tbody>
+              </table>
+            </div>
+            <button class="btn btn--ghost btn--sm" id="add-item" style="margin-top:.75rem">
+              <i class="fas fa-plus" aria-hidden="true"></i> Agregar Ítem
+            </button>
+          </div>
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-calculator" aria-hidden="true"></i> Configuración</div>
+            <div class="inv-grid-2">
+              <div class="form__group">
+                <label class="form__label" for="inv-itbis">ITBIS (%)</label>
+                <select class="form__input" id="inv-itbis">
+                  <option value="0">0% (Exento)</option>
+                  <option value="18">18%</option>
+                </select>
+              </div>
+            </div>
+            <div class="inv-total-box" id="inv-totals">
+              <div class="inv-total-row"><span>Subtotal:</span><strong id="tot-sub">RD$ 0.00</strong></div>
+              <div class="inv-total-row"><span>ITBIS:</span><strong id="tot-tax">RD$ 0.00</strong></div>
+              <div class="inv-total-final"><span>TOTAL A PAGAR:</span><span id="tot-final">RD$ 0.00</span></div>
+            </div>
+          </div>
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-sticky-note" aria-hidden="true"></i> Notas Adicionales</div>
+            <textarea class="form__input form__textarea" id="inv-notes" rows="2" placeholder="Observaciones sobre el servicio…"></textarea>
+          </div>
+
+          <div class="inv-section">
+            <div class="inv-section-title"><i class="fas fa-user-cog" aria-hidden="true"></i> Mecánico Responsable</div>
+            <div class="inv-grid-2">
+              <div class="form__group"><label class="form__label" for="inv-mec-name">Nombre</label><input class="form__input" type="text" id="inv-mec-name" value="Starlin Astacio" /></div>
+              <div class="form__group"><label class="form__label" for="inv-mec-ced">Cédula</label><input class="form__input" type="text" id="inv-mec-ced" value="402-2646104-0" /></div>
+            </div>
+          </div>
+
+          <div class="inv-actions-row">
+            <button class="btn btn--pri btn--lg" id="preview-inv"><i class="fas fa-eye" aria-hidden="true"></i> Vista Previa y Guardar</button>
+            <button class="btn btn--ghost btn--lg" id="clear-inv"><i class="fas fa-trash-alt" aria-hidden="true"></i> Limpiar</button>
+          </div>
+        </div>
+
+        <!-- ── TAB LISTA DE FACTURAS ──────────────────────── -->
+        <div class="billing-panel" id="tab-lista" role="tabpanel">
+          <div class="inv-list-head">
+            <input class="inv-search" type="text" id="inv-search" placeholder="🔍 Buscar por cliente, número…" aria-label="Buscar facturas" />
+            <select class="form__input" id="inv-filter" style="width:auto" aria-label="Filtrar por estado">
+              <option value="">Todos los estados</option>
+              <option value="paid">Pagados</option>
+              <option value="pending">Pendientes</option>
+              <option value="cancelled">Cancelados</option>
+            </select>
+            <button class="btn btn--outline btn--sm" id="inv-export-json" aria-label="Exportar facturas a JSON" title="Descargar respaldo de todas las facturas">
+              <i class="fas fa-download" aria-hidden="true"></i> Exportar
+            </button>
+          </div>
+          <div class="inv-table-wrap">
+            <table class="inv-table" aria-label="Lista de facturas">
+              <thead>
+                <tr>
+                  <th>N° Factura</th><th>Fecha</th><th>Cliente</th>
+                  <th>Vehículo</th><th>Total</th><th>Estado</th><th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="inv-list-body"></tbody>
+            </table>
+          </div>
+          <p class="inv-empty" id="inv-empty" hidden><i class="fas fa-inbox" aria-hidden="true"></i><br>No hay facturas guardadas aún.</p>
+        </div>
+
+        <!-- ── TAB ESTADÍSTICAS ──────────────────────────── -->
+        <div class="billing-panel" id="tab-stats" role="tabpanel">
+          <div class="stats-cards">
+            <div class="stat-card"><div class="stat-card__icon" style="background:rgba(26,111,212,.15);color:var(--pri)"><i class="fas fa-file-invoice" aria-hidden="true"></i></div><div class="stat-card__num" id="st-total">0</div><div class="stat-card__label">Total Facturas</div></div>
+            <div class="stat-card"><div class="stat-card__icon" style="background:rgba(35,134,54,.15);color:#3fb950"><i class="fas fa-check-circle"   aria-hidden="true"></i></div><div class="stat-card__num" id="st-paid">0</div><div class="stat-card__label">Pagadas</div></div>
+            <div class="stat-card"><div class="stat-card__icon" style="background:rgba(240,180,41,.15);color:var(--acc)"><i class="fas fa-clock"        aria-hidden="true"></i></div><div class="stat-card__num" id="st-pending">0</div><div class="stat-card__label">Pendientes</div></div>
+            <div class="stat-card"><div class="stat-card__icon" style="background:rgba(26,111,212,.15);color:var(--pri)"><i class="fas fa-dollar-sign"  aria-hidden="true"></i></div><div class="stat-card__num stat-card__num--sm" id="st-revenue">RD$ 0</div><div class="stat-card__label">Ingresos Pagados</div></div>
+          </div>
+          <div class="recent-invs-box">
+            <h3>Últimas 5 Facturas</h3>
+            <div id="recent-invs"></div>
+          </div>
+        </div>
+
+      </div><!-- /billing-panel -->
+    </div><!-- /modal-box -->
+  </div><!-- /billing-modal -->
+
+  <!-- ══════════════════════════════════════════════════════
+       MODAL VISTA PREVIA FACTURA
+  ══════════════════════════════════════════════════════ -->
+  <div class="inv-preview-modal" id="inv-preview-modal" role="dialog" aria-modal="true" aria-label="Vista previa de factura" hidden>
+    <div class="inv-preview-wrap">
+      <!-- Acciones -->
+      <div class="inv-preview-actions">
+        <h3><i class="fas fa-file-invoice" aria-hidden="true"></i> Vista Previa de Factura</h3>
+        <div class="inv-preview-btns">
+          <button class="btn btn--success btn--sm" id="save-inv"   ><i class="fas fa-save"    aria-hidden="true"></i> Guardar</button>
+          <button class="btn btn--pri     btn--sm" id="print-inv"  ><i class="fas fa-print"   aria-hidden="true"></i> Imprimir / PDF</button>
+          <button class="btn btn--sm btn--wa-like" id="wa-inv"     ><i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar WA</button>
+          <button class="btn btn--ghost   btn--sm" id="close-preview"><i class="fas fa-times" aria-hidden="true"></i> Cerrar</button>
+        </div>
+      </div>
+      <!-- Documento -->
+      <div id="invoice-print"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       SCRIPTS
+  ══════════════════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+
+  <!--
+    GOOGLE ANALYTICS GA4 — descomenta y reemplaza G-XXXXXXXXXX
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+  -->
+
+</body>
+</html>
