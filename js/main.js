@@ -286,7 +286,15 @@ function genQR(url) {
   const c = document.getElementById('qr-container');
   c.innerHTML = '';
   if (typeof QRCode === 'undefined') return;
-  new QRCode(c, { text: url, width: 140, height: 140, colorDark: '#1a6fd4', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.H });
+  try {
+    new QRCode(c, { text: url, width: 140, height: 140, colorDark: '#1a6fd4', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.M });
+  } catch(e) {
+    try {
+      new QRCode(c, { text: url, width: 140, height: 140, colorDark: '#1a6fd4', colorLight: '#ffffff', correctLevel: QRCode.CorrectLevel.L });
+    } catch(e2) {
+      c.innerHTML = '<p style="font-size:.75rem;color:var(--txt2);padding:.5rem">Escanear enlace no disponible</p>';
+    }
+  }
 }
 window.addEventListener('load', () => genQR(CONFIG.whatsapp));
 document.querySelectorAll('.qr-tab').forEach(t => {

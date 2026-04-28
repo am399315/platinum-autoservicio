@@ -580,7 +580,7 @@ body.has-banner .header  { top: 2rem; }
 #qr-container  { display: flex; justify-content: center; padding: .5rem; }
 #qr-container canvas, #qr-container img { border-radius: var(--r); border: 3px solid var(--pri); }
 .qr-tabs { display: flex; justify-content: center; gap: .5rem; }
-.qr-tab { width: 2.5rem; height: 2.5rem; border-radius: var(--r); background: var(--surf2); border: 1px solid var(--border); color: var(--txt2); font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all var(--tr); }
+.qr-tab { width: 2.5rem; height: 2.5rem; border-radius: var(--r); background: var(--surf2); border: 1px solid var(--border); color: var(--txt2); font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: all var(--tr); cursor: pointer; }
 .qr-tab:hover, .qr-tab.active { background: var(--pri); color: #fff; border-color: var(--pri); }
 
 /* ── 16. CITA ─────────────────────────────────────────────── */
