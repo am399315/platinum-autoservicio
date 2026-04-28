@@ -63,6 +63,7 @@ body::after {
   position: fixed; inset: 0;
   z-index: 9000;
   pointer-events: none;
+  cursor: inherit;
   opacity: .025;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 200px 200px;
 }
@@ -224,7 +225,9 @@ body.has-banner .header  { top: 2rem; }
 .nav__link.active::after   { width: 60%; }
 
 /* Controls */
-.nav__controls { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; }
+.nav__controls { display: flex; align-items: center; gap: .4rem; flex-shrink: 0; position: relative; z-index: 10; }
+.theme-toggle  { cursor: pointer; }
+.lang-btn      { cursor: pointer; }
 
 /* Lang */
 .lang-switcher {
@@ -1191,7 +1194,7 @@ body.has-banner .header  { top: 2rem; }
   position: fixed;
   bottom: 5rem;
   right: 1.5rem;
-  z-index: 1000;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
