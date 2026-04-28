@@ -315,7 +315,10 @@ if (!lastClosed || Date.now() - +lastClosed > 86400000) {
   let cdInterval;
   const popupTimer = setTimeout(() => {
     popup.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
+    /* iOS-safe scroll lock */
+    const sy = window.scrollY;
+    document.body.dataset.scrollY = sy;
+    document.body.style.cssText += `;position:fixed;top:-${sy}px;left:0;right:0;`;
     startCountdown();
   }, 4500);
 
@@ -336,7 +339,13 @@ if (!lastClosed || Date.now() - +lastClosed > 86400000) {
 
   function closePopup() {
     popup.setAttribute('hidden', '');
-    document.body.style.overflow = '';
+    /* iOS-safe scroll unlock */
+    const sy = +(document.body.dataset.scrollY || 0);
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    window.scrollTo(0, sy);
     localStorage.setItem('popup-closed', String(Date.now()));
     clearInterval(cdInterval);
     clearTimeout(popupTimer);
