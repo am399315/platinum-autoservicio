@@ -764,7 +764,7 @@ function buildInvoiceHTML(d) {
       <div class="inv-doc-biz-info">
         Entrada de Cabañas Las Palmas, Barrio Ensanche Sinaí<br>
         Lun–Sáb 8:00 AM – 7:00 PM &nbsp;•&nbsp; @platinum.autoservicios<br>
-        ventas@platinumautoservicios.com &nbsp;•&nbsp; (849) 341-7621
+        platinumautoservicios@gmail.com &nbsp;•&nbsp; (849) 341-7621
       </div>
     </div>
     <div class="inv-doc-badge">
@@ -870,7 +870,7 @@ function buildInvoiceHTML(d) {
            onerror="this.style.display='none'"/>
       <div>
         <div class="inv-doc-footer-biz">PLATINUM AUTOSERVICIOS • (849) 341-7621</div>
-        <div style="font-size:.72rem;opacity:.65">ventas@platinumautoservicios.com • @platinum.autoservicios</div>
+        <div style="font-size:.72rem;opacity:.65">platinumautoservicios@gmail.com • @platinum.autoservicios</div>
       </div>
     </div>
     <div class="inv-doc-footer-info">
