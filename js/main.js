@@ -44,7 +44,7 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
   const next = html.dataset.theme === 'dark' ? 'light' : 'dark';
   html.setAttribute('data-theme', next);
   localStorage.setItem('platinum-theme', next);
-});
+}, { passive: true });
 
 /* ─────────────────────────────────────────────────────────────
    2. STICKY BANNER
@@ -163,10 +163,10 @@ function applyLang(lang) {
   });
 }
 
-document.querySelector('.lang-switcher').addEventListener('click', e => {
-  const btn = e.target.closest('.lang-btn');
-  if (!btn || btn.dataset.lang === currentLang) return;
-  applyLang(btn.dataset.lang);
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.lang !== currentLang) applyLang(btn.dataset.lang);
+  });
 });
 applyLang(currentLang);
 
@@ -365,8 +365,37 @@ document.getElementById('appt-wa-btn').addEventListener('click', () => {
   window.open(`${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
 });
 
-/* Envío genérico con Formspree */
-async function submitForm(formEl, submitBtn, successEl) {
+/* Construye el mensaje de WhatsApp para el formulario de cita */
+function buildApptMsg() {
+  const v = id => document.getElementById(id)?.value?.trim() || '';
+  return [
+    '🔧 *Solicitud de Cita — Platinum Autoservicios*',
+    '',
+    v('an') ? `👤 Nombre:   ${v('an')}` : '',
+    v('ap') ? `📞 Teléfono: ${v('ap')}` : '',
+    v('ad') ? `📅 Fecha:    ${v('ad')}` : '',
+    v('at') ? `🕐 Hora:     ${v('at')}` : '',
+    v('as') ? `🔩 Servicio: ${v('as')}` : '',
+    v('av') ? `🚗 Vehículo: ${v('av')}` : '',
+    v('am') ? `📝 Notas:    ${v('am')}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+/* Construye el mensaje de WhatsApp para el formulario de contacto */
+function buildContactMsg() {
+  const v = id => document.getElementById(id)?.value?.trim() || '';
+  return [
+    '💬 *Mensaje de Contacto — Platinum Autoservicios*',
+    '',
+    v('cn') ? `👤 Nombre:   ${v('cn')}` : '',
+    v('cp') ? `📞 Teléfono: ${v('cp')}` : '',
+    v('cs') ? `🔩 Servicio: ${v('cs')}` : '',
+    v('cm') ? `📝 Mensaje:  ${v('cm')}` : '',
+  ].filter(Boolean).join('\n');
+}
+
+/* Envío con Formspree — fallback a WhatsApp con los datos reales */
+async function submitForm(formEl, submitBtn, successEl, buildMsg) {
   const txt  = submitBtn.querySelector('.btn__txt');
   const load = submitBtn.querySelector('.btn__load');
   txt.hidden = true; load.hidden = false; submitBtn.disabled = true;
@@ -378,8 +407,8 @@ async function submitForm(formEl, submitBtn, successEl) {
       setTimeout(() => successEl.hidden = true, 6000);
     } else throw new Error();
   } catch {
-    /* Fallback: abrir WhatsApp */
-    window.open(`${CONFIG.whatsapp}?text=${encodeURIComponent('Hola, necesito información sobre sus servicios.')}`, '_blank');
+    /* Fallback: WhatsApp con los datos que el cliente llenó */
+    window.open(`${CONFIG.whatsapp}?text=${encodeURIComponent(buildMsg())}`, '_blank');
   } finally {
     txt.hidden = false; load.hidden = true; submitBtn.disabled = false;
   }
@@ -387,7 +416,7 @@ async function submitForm(formEl, submitBtn, successEl) {
 
 document.getElementById('appt-form').addEventListener('submit', e => {
   e.preventDefault();
-  submitForm(e.target, document.getElementById('appt-submit'), document.getElementById('appt-ok'));
+  submitForm(e.target, document.getElementById('appt-submit'), document.getElementById('appt-ok'), buildApptMsg);
 });
 
 document.getElementById('contact-form').addEventListener('submit', e => {
@@ -398,7 +427,7 @@ document.getElementById('contact-form').addEventListener('submit', e => {
     if (!el.value.trim()) { el.classList.add('error'); err.textContent = 'Campo requerido.'; valid = false; }
     else                  { el.classList.remove('error'); err.textContent = ''; }
   });
-  if (valid) submitForm(e.target, document.getElementById('cf-submit'), document.getElementById('cf-ok'));
+  if (valid) submitForm(e.target, document.getElementById('cf-submit'), document.getElementById('cf-ok'), buildContactMsg);
 });
 
 document.querySelectorAll('.form__input').forEach(inp => {

@@ -252,6 +252,8 @@ body.has-banner .header  { top: 2rem; }
 #icon-moon { display: none; }
 [data-theme="light"] #icon-sun  { display: none; }
 [data-theme="light"] #icon-moon { display: inline; }
+#icon-sun, #icon-moon { pointer-events: none; }
+.lang-btn { user-select: none; }
 
 /* Hamburguesa */
 .nav__toggle {
