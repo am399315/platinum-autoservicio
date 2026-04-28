@@ -950,6 +950,9 @@ body.has-banner .header  { top: 2rem; }
 .reveal:nth-child(5) { transition-delay: .4s; }
 .reveal:nth-child(6) { transition-delay: .5s; }
 
+/* Restaurar transición rápida en tarjetas interactivas ya visibles */
+.svc-card.reveal.visible { transition: all var(--tr); transition-delay: 0s; }
+
 /* ── 25. RESPONSIVE — TABLET ──────────────────────────────── */
 @media (max-width: 1024px) {
   :root { --sp: 4rem; }
